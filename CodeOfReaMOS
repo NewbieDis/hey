@@ -163,81 +163,81 @@ function coru()
 			for i=1,#RG1[1] do
 				allplus+=RG1[1][i]:GetTemp()
 			end
-			RG1Avgs[5]:ChangeProperties({Text=allplus / #RG1[1]})
+			RG1Avgs[5]:ChangeProperties({Text=string.format("%.1f",tostring(allplus / #RG1[1]))})
 			allplus = 0
 			for i=1,#RG1[1] do
 				allplus+=RG1[1][i]:GetFuel()[1]
 			end
-			RG1Avgs[4]:ChangeProperties({Text=allplus/#RG1[1]})
+			RG1Avgs[4]:ChangeProperties({Text=string.format("%.3f",tostring(allplus / #RG1[1]))})
 			allplus = 0
 			for i=1,#RG1[1] do
 				allplus+=RG1[1][i]:GetFuel()[2]
 			end
-			RG1Avgs[3]:ChangeProperties({Text=allplus/#RG1[1]})
+			RG1Avgs[3]:ChangeProperties({Text=string.format("%.3f",tostring(allplus / #RG1[1]))})
 			allplus = 0
 			for i=1,#RG1[1] do
 				allplus+=RG1[1][i]:GetFuel()[3]
 			end
-			RG1Avgs[2]:ChangeProperties({Text=allplus/#RG1[1]})
+			RG1Avgs[2]:ChangeProperties({Text=string.format("%.3f",tostring(allplus / #RG1[1]))})
 			allplus = 0
 			for i=1,#RG1[1] do
 				allplus+=RG1[1][i]:GetFuel()[4]
 			end
-			RG1Avgs[1]:ChangeProperties({Text=allplus/#RG1[1]})
+			RG1Avgs[1]:ChangeProperties({Text=string.format("%.3f",tostring(allplus / #RG1[1]))})
 		end
 		if RG2 then
 			allplus = 0
 			for i=1,#RG2[1] do
 				allplus+=RG2[1][i]:GetTemp()
 			end
-			RG2Avgs[5]:ChangeProperties({Text=allplus / #RG2[1]})
+			RG2Avgs[5]:ChangeProperties({Text=string.format("%.1f",tostring(allplus / #RG2[1]))})
 			allplus = 0
 			for i=1,#RG2[1] do
 				allplus+=RG2[1][i]:GetFuel()[1]
 			end
-			RG2Avgs[4]:ChangeProperties({Text=allplus/#RG2[1]})
+			RG2Avgs[4]:ChangeProperties({Text=string.format("%.3f",tostring(allplus / #RG2[1]))})
 			allplus = 0
 			for i=1,#RG2[1] do
 				allplus+=RG2[1][i]:GetFuel()[2]
 			end
-			RG2Avgs[3]:ChangeProperties({Text=allplus/#RG2[1]})
+			RG2Avgs[3]:ChangeProperties({Text=string.format("%.3f",tostring(allplus / #RG2[1]))})
 			allplus = 0
 			for i=1,#RG2[1] do
 				allplus+=RG2[1][i]:GetFuel()[3]
 			end
-			RG2Avgs[2]:ChangeProperties({Text=allplus/#RG2[1]})
+			RG2Avgs[2]:ChangeProperties({Text=string.format("%.3f",tostring(allplus / #RG2[1]))})
 			allplus = 0
 			for i=1,#RG2[1] do
 				allplus+=RG2[1][i]:GetFuel()[4]
 			end
-			RG2Avgs[1]:ChangeProperties({Text=allplus/#RG2[1]})
+			RG2Avgs[1]:ChangeProperties({Text=string.format("%.3f",tostring(allplus / #RG2[1]))})
 		end
 		if RG3 then
 			allplus = 0
 			for i=1,#RG3[1] do
 				allplus+=RG3[1][i]:GetTemp()
 			end
-			RG3Avgs[5]:ChangeProperties({Text=allplus / #RG3[1]})
+			RG3Avgs[5]:ChangeProperties({Text=string.format("%.1f",tostring(allplus / #RG3[1]))})
 			allplus = 0
 			for i=1,#RG3[1] do
 				allplus+=RG3[1][i]:GetFuel()[1]
 			end
-			RG3Avgs[4]:ChangeProperties({Text=allplus/#RG3[1]})
+			RG3Avgs[4]:ChangeProperties({Text=string.format("%.3f",tostring(allplus / #RG3[1]))})
 			allplus = 0
 			for i=1,#RG3[1] do
 				allplus+=RG3[1][i]:GetFuel()[2]
 			end
-			RG3Avgs[3]:ChangeProperties({Text=allplus/#RG3[1]})
+			RG3Avgs[3]:ChangeProperties({Text=string.format("%.3f",tostring(allplus / #RG3[1]))})
 			allplus = 0
 			for i=1,#RG3[1] do
 				allplus+=RG3[1][i]:GetFuel()[3]
 			end
-			RG3Avgs[2]:ChangeProperties({Text=allplus/#RG3[1]})
+			RG3Avgs[2]:ChangeProperties({Text=string.format("%.3f",tostring(allplus / #RG3[1]))})
 			allplus = 0
 			for i=1,#RG3[1] do
 				allplus+=RG3[1][i]:GetFuel()[4]
 			end
-			RG3Avgs[1]:ChangeProperties({Text=allplus/#RG3[1]})
+			RG3Avgs[1]:ChangeProperties({Text=string.format("%.3f",tostring(allplus / #RG3[1]))})
 		end
 	end
 end
