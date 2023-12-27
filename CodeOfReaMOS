@@ -13,8 +13,6 @@ local restart = false
 ScreenLeft:ClearElements()
 ScreenRight:ClearElements()
 
-
-
 local Prepare = {ScreenLeft:CreateElement("TextLabel",{Text="Preparing System.";Size = UDim2.fromScale(1,0.3);BackgroundTransparency=1;TextScaled=true;TextColor3 = Color3.fromRGB(255,255,255)}),ScreenRight:CreateElement("TextLabel",{Text="Preparing System.";Size = UDim2.fromScale(1,0.3);BackgroundTransparency=1;TextScaled=true;TextColor3 = Color3.fromRGB(255,255,255)})}
 local RMOS = {ScreenLeft:CreateElement("TextLabel",{Text="ReaMOS";Size = UDim2.fromScale(1,1);BackgroundTransparency=1;TextScaled=true;TextColor3 = Color3.fromRGB(255,255,255)}),ScreenRight:CreateElement("TextLabel",{Text="ReaMOS";Size = UDim2.fromScale(1,1);BackgroundTransparency=1;TextScaled=true;TextColor3 = Color3.fromRGB(255,255,255)})}
 local RMOSmall = {ScreenLeft:CreateElement("TextLabel",{Text="Reactor Manual Operating System";Size = UDim2.fromScale(1,0.1);Position = UDim2.fromScale(0,0.7);BackgroundTransparency=1;TextScaled=true;TextColor3 = Color3.fromRGB(255,255,255)}),ScreenRight:CreateElement("TextLabel",{Text="Reactor Manual Operating System";Size = UDim2.fromScale(1,0.1);Position = UDim2.fromScale(0,0.7);BackgroundTransparency=1;TextScaled=true;TextColor3 = Color3.fromRGB(255,255,255)})}
@@ -156,12 +154,15 @@ if RG3 == false and reactors then
 	RG3MainButton:ChangeProperties({Text="RG3 Not found.";TextColor3 = Color3.fromRGB(255,0,0);BackgroundColor3 = Color3.fromRGB(0,0,0);BorderColor3= Color3.fromRGB(255,255,255)})
 end
 
+function coru()
+	while true do
+		wait(1)
+		RG1Avgs[1]:ChangeProperties({Text=math.random(1,100)})
+		coroutine.yield()
+	end
+end
+local mcoru = coroutine.create(coru)
+coroutine.resume(mcoru)
 
 
-local coru = coroutine.wrap(function()
-	repeat
-		wait()
-		RG1Avgs[1].Text = math.random(1,100)
-	until not restart
-end)
-coru()
+coroutine.resume(mcoru)
