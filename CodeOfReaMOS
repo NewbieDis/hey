@@ -8,6 +8,8 @@ local AlPort = {GetPartFromPort(1,"Light"),GetPartFromPort(21,"Light"),GetPartFr
 
 local reactors = true
 
+local restart = false
+
 ScreenLeft:ClearElements()
 ScreenRight:ClearElements()
 
@@ -153,3 +155,13 @@ end
 if RG3 == false and reactors then
 	RG3MainButton:ChangeProperties({Text="RG3 Not found.";TextColor3 = Color3.fromRGB(255,0,0);BackgroundColor3 = Color3.fromRGB(0,0,0);BorderColor3= Color3.fromRGB(255,255,255)})
 end
+
+
+
+local coru = coroutine.wrap(function()
+	repeat
+		wait()
+		RG1Avgs[1].Text = math.random(1,100)
+	until not restart
+end)
+coru()
