@@ -94,7 +94,7 @@ if RG1 == false and RG2 == false and RG3 == false then
 	ScreenLeft:ClearElements()
 	ScreenRight:ClearElements()
 	reactors = false
-	ScreenLeft:CreateElement("TextLabel",{Text="Critical Error : Reactors Not Found. Restart for Find Reactors Again.";Size=UDim2.fromScale(1,1);BackgroundColor3=Color3.fromRGB(255, 149, 0);TextColor3=Color3.fromRGB(167, 95, 0);TextSize = 28;TextXAlignment = Enum.TextXAlignment.Left,TextYAlignment = Enum.TextYAlignment.Top})
+	ScreenLeft:CreateElement("TextLabel",{Text="Critical Error : Reactors Not Found. Restart for Find Reactors Again.";Size=UDim2.fromScale(1,1);BackgroundColor3=Color3.fromRGB(255, 149, 0);TextColor3=Color3.fromRGB(167, 95, 0);TextSize = 16;TextWrapped=true;TextXAlignment = Enum.TextXAlignment.Left,TextYAlignment = Enum.TextYAlignment.Top})
 	ScreenRight:CreateElement("TextLabel",{Text="How To Connect Reactors?";Size=UDim2.new(1,0,0,25);BackgroundColor3=Color3.fromRGB(167, 95, 0);TextColor3=Color3.fromRGB(255, 149, 0);TextScaled=true;BorderSizePixel=0})
 	ScreenRight:CreateElement("TextLabel",{Text="1. Connect Reactors with Ethernet Cable and Connect That Reactor Cables on Biggest port";Size=UDim2.new(1,0,0,25);Position=UDim2.new(0,0,0,25);BackgroundColor3 = Color3.fromRGB(255, 149, 0);TextColor3=Color3.fromRGB(167, 95, 0);TextScaled=true;BorderSizePixel=0})
 	ScreenRight:CreateElement("TextLabel",{Text="2. Connect Active Polysilicon that Attched at Reactor with Triggerwire and connect to Pink colored port";Size=UDim2.new(1,0,0,25);Position=UDim2.new(0,0,0,50);BackgroundColor3 = Color3.fromRGB(255, 149, 0);TextColor3=Color3.fromRGB(167, 95, 0);TextScaled=true;BorderSizePixel=0})
