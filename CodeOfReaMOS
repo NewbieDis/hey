@@ -127,9 +127,9 @@ if reactors then
 	ScreenLeft:CreateElement("TextLabel",{Text="Avg. Fuel 1";Position=UDim2.new(0,0,0,85);Size=UDim2.new(0,70,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(167, 95, 0)}),
 	ScreenLeft:CreateElement("TextLabel",{Text="Avg. Temp";Position=UDim2.new(0,0,0,70);Size=UDim2.new(0,70,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(167, 95, 0)})}
 	
-	RG1MainButton = ScreenLeft:CreateElement("TextButton",{Text="RG1";TextScaled=true;BackgroundColor3 = Color3.fromRGB(0,255,0);Size = UDim2.new(0,60,0,60);Position = UDim2.new(0,70,0,10)})
-	RG2MainButton = ScreenLeft:CreateElement("TextButton",{Text="RG2";TextScaled=true;BackgroundColor3 = Color3.fromRGB(0,255,0);Size = UDim2.new(0,60,0,60);Position = UDim2.new(0,140,0,10)})
-	RG3MainButton = ScreenLeft:CreateElement("TextButton",{Text="RG3";TextScaled=true;BackgroundColor3 = Color3.fromRGB(0,255,0);Size = UDim2.new(0,60,0,60);Position = UDim2.new(0,210,0,10)})
+	RG1MainButton = ScreenLeft:CreateElement("TextButton",{Text="RG1";TextScaled=true;BackgroundColor3 = Color3.fromRGB(255, 149, 0);Size = UDim2.new(0,60,0,60);Position = UDim2.new(0,70,0,10);TextColor3=Color3.fromRGB(167, 95, 0);BorderColor3= Color3.fromRGB(167, 95, 0)})
+	RG2MainButton = ScreenLeft:CreateElement("TextButton",{Text="RG2";TextScaled=true;BackgroundColor3 = Color3.fromRGB(255, 149, 0);Size = UDim2.new(0,60,0,60);Position = UDim2.new(0,140,0,10);TextColor3=Color3.fromRGB(167, 95, 0);BorderColor3= Color3.fromRGB(167, 95, 0)})
+	RG3MainButton = ScreenLeft:CreateElement("TextButton",{Text="RG3";TextScaled=true;BackgroundColor3 = Color3.fromRGB(255, 149, 0);Size = UDim2.new(0,60,0,60);Position = UDim2.new(0,210,0,10);TextColor3=Color3.fromRGB(167, 95, 0);BorderColor3= Color3.fromRGB(167, 95, 0)})
 	
 	RG1Avgs = {ScreenLeft:CreateElement("TextLabel",{Text="NaN";Position=UDim2.new(0,70,0,130);Size=UDim2.new(0,60,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(167, 95, 0)}),
 	ScreenLeft:CreateElement("TextLabel",{Text="NaN";Position=UDim2.new(0,70,0,115);Size=UDim2.new(0,60,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(167, 95, 0)}),
@@ -151,15 +151,15 @@ if reactors then
 end
 
 if RG1 == false and reactors then
-	RG1MainButton:ChangeProperties({Text="RG1 Not found.";TextColor3 = Color3.fromRGB(255,0,0);BackgroundColor3 = Color3.fromRGB(0,0,0);BorderColor3= Color3.fromRGB(255,255,255)})
+	RG1MainButton:ChangeProperties({Text="RG1 Not found.";TextColor3 = Color3.fromRGB(255, 149, 0);BackgroundColor3 = Color3.fromRGB(167, 95, 0);BorderColor3= Color3.fromRGB(167, 95, 0)})
 end
 
 if RG2 == false and reactors then
-	RG2MainButton:ChangeProperties({Text="RG2 Not found.";TextColor3 = Color3.fromRGB(255,0,0);BackgroundColor3 = Color3.fromRGB(0,0,0);BorderColor3= Color3.fromRGB(255,255,255)})
+	RG2MainButton:ChangeProperties({Text="RG2 Not found.";TextColor3 = Color3.fromRGB(255, 149, 0);BackgroundColor3 = Color3.fromRGB(167, 95, 0);BorderColor3= Color3.fromRGB(167, 95, 0)})
 end
 
 if RG3 == false and reactors then
-	RG3MainButton:ChangeProperties({Text="RG3 Not found.";TextColor3 = Color3.fromRGB(255,0,0);BackgroundColor3 = Color3.fromRGB(0,0,0);BorderColor3= Color3.fromRGB(255,255,255)})
+	RG3MainButton:ChangeProperties({Text="RG3 Not found.";TextColor3 = Color3.fromRGB(255, 149, 0);BackgroundColor3 = Color3.fromRGB(167, 95, 0);BorderColor3= Color3.fromRGB(167, 95, 0)})
 end
 
 function coru()
