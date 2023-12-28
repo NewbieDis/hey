@@ -7,8 +7,14 @@ local ScreenRight = GetPartFromPort(18,"TouchScreen")
 local AlPort = {GetPartFromPort(1,"Light"),GetPartFromPort(21,"Light"),GetPartFromPort(22,"Light"),GetPartFromPort(23,"Light"),GetPartFromPort(24,"Light"),GetPartFromPort(25,"Light")}
 
 local reactors = true
-
 local restart = false
+
+local HighTemp = false
+local Stall = false
+local FuelLow = false
+local WaterLow = false
+local MELTDOWN = false
+local SCRAM = false
 
 ScreenLeft:ClearElements()
 ScreenRight:ClearElements()
@@ -89,12 +95,12 @@ if RG1 == false and RG2 == false and RG3 == false then
 	ScreenRight:ClearElements()
 	reactors = false
 	ScreenLeft:CreateElement("TextLabel",{Text="Critical Error : Reactors Not Found. Restart for Find Reactors Again.";Size=UDim2.fromScale(1,1);BackgroundColor3=Color3.fromRGB(255,0,0);TextColor3=Color3.fromRGB(255,255,255);TextScaled=true})
-	ScreenRight:CreateElement("TextLabel",{Text="How To Connect Reactors?";Size=UDim2.new(1,0,0,25);BackgroundColor3=Color3.fromRGB(255,255,255);TextColor3=Color3.fromRGB(0,0,0);TextScaled=true})
-	ScreenRight:CreateElement("TextLabel",{Text="1. Connect Reactors with Ethernet Cable and Connect That Reactor Cables on Biggest port";Size=UDim2.new(1,0,0,25);Position=UDim2.new(0,0,0,25);BackgroundTransparency=1;TextColor3=Color3.fromRGB(255,255,255);TextScaled=true})
-	ScreenRight:CreateElement("TextLabel",{Text="2. Connect Active Polysilicon that Attched at Reactor with Triggerwire and connect to Pink colored port";Size=UDim2.new(1,0,0,25);Position=UDim2.new(0,0,0,50);BackgroundTransparency=1;TextColor3=Color3.fromRGB(255,255,255);TextScaled=true})
-	ScreenRight:CreateElement("TextLabel",{Text="3. Connect Deactivate PolySilicon that Attched at Reactor with Triggerwire and connect to Blue colored port";Size=UDim2.new(1,0,0,25);Position=UDim2.new(0,0,0,75);BackgroundTransparency=1;TextColor3=Color3.fromRGB(255,255,255);TextScaled=true})
-	ScreenRight:CreateElement("TextLabel",{Text="4.Connect FlipFlop Polysilicon that Attched at Reactor with Triggerwire and connect to light brown colored port";Size=UDim2.new(1,0,0,25);Position=UDim2.new(0,0,0,100);BackgroundTransparency=1;TextColor3=Color3.fromRGB(255,255,255);TextScaled=true})
-	ScreenRight:CreateElement("TextLabel",{Text="5. Connect Reactor Fuel(Uranium) Dispenser with Triggerwire and connect Triggerwire to Light Gray colored port";Size=UDim2.new(1,0,0,25);Position=UDim2.new(0,0,0,125);BackgroundTransparency=1;TextColor3=Color3.fromRGB(255,255,255);TextScaled=true})
+	ScreenRight:CreateElement("TextLabel",{Text="How To Connect Reactors?";Size=UDim2.new(1,0,0,25);BackgroundColor3=Color3.fromRGB(167, 95, 0);TextColor3=Color3.fromRGB(255, 149, 0);TextScaled=true})
+	ScreenRight:CreateElement("TextLabel",{Text="1. Connect Reactors with Ethernet Cable and Connect That Reactor Cables on Biggest port";Size=UDim2.new(1,0,0,25);Position=UDim2.new(0,0,0,25);BackgroundColor3 = Color3.fromRGB(255, 149, 0);TextColor3=Color3.fromRGB(167, 95, 0);TextScaled=true})
+	ScreenRight:CreateElement("TextLabel",{Text="2. Connect Active Polysilicon that Attched at Reactor with Triggerwire and connect to Pink colored port";Size=UDim2.new(1,0,0,25);Position=UDim2.new(0,0,0,50);BackgroundColor3 = Color3.fromRGB(255, 149, 0);TextColor3=Color3.fromRGB(167, 95, 0);TextScaled=true})
+	ScreenRight:CreateElement("TextLabel",{Text="3. Connect Deactivate PolySilicon that Attched at Reactor with Triggerwire and connect to Blue colored port";Size=UDim2.new(1,0,0,25);Position=UDim2.new(0,0,0,75);BackgroundColor3 = Color3.fromRGB(255, 149, 0);TextColor3=Color3.fromRGB(167, 95, 0);TextScaled=true})
+	ScreenRight:CreateElement("TextLabel",{Text="4.Connect FlipFlop Polysilicon that Attched at Reactor with Triggerwire and connect to light brown colored port";Size=UDim2.new(1,0,0,25);Position=UDim2.new(0,0,0,100);BackgroundColor3 = Color3.fromRGB(255, 149, 0);TextColor3=Color3.fromRGB(167, 95, 0);TextScaled=true})
+	ScreenRight:CreateElement("TextLabel",{Text="5. Connect Reactor Fuel(Uranium) Dispenser with Triggerwire and connect Triggerwire to Light Gray colored port";Size=UDim2.new(1,0,0,25);Position=UDim2.new(0,0,0,125);BackgroundColor3 = Color3.fromRGB(255, 149, 0);TextColor3=Color3.fromRGB(167, 95, 0);TextScaled=true})
 end
 
 local uselesses ={}
@@ -156,7 +162,7 @@ end
 
 function coru()
 	while true do
-		wait(1)
+		wait()
 		local allplus = 0
 		if RG1 then
 			allplus = 0
