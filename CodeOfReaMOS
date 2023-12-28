@@ -94,7 +94,7 @@ if RG1 == false and RG2 == false and RG3 == false then
 	ScreenLeft:ClearElements()
 	ScreenRight:ClearElements()
 	reactors = false
-	ScreenLeft:CreateElement("TextLabel",{Text="Critical Error : Reactors Not Found. Restart for Find Reactors Again.";Size=UDim2.fromScale(1,1);BackgroundColor3=Color3.fromRGB(255,0,0);TextColor3=Color3.fromRGB(255,255,255);TextScaled=true})
+	ScreenLeft:CreateElement("TextLabel",{Text="Critical Error : Reactors Not Found. Restart for Find Reactors Again.";Size=UDim2.fromScale(1,1);BackgroundColor3=Color3.fromRGB(255, 149, 0);TextColor3=Color3.fromRGB(167, 95, 0);TextSize = 28;TextXAlignment = Enum.TextXAlignment.Left,TextYAlignment = Enum.TextYAlignment.Top})
 	ScreenRight:CreateElement("TextLabel",{Text="How To Connect Reactors?";Size=UDim2.new(1,0,0,25);BackgroundColor3=Color3.fromRGB(167, 95, 0);TextColor3=Color3.fromRGB(255, 149, 0);TextScaled=true;BorderSizePixel=0})
 	ScreenRight:CreateElement("TextLabel",{Text="1. Connect Reactors with Ethernet Cable and Connect That Reactor Cables on Biggest port";Size=UDim2.new(1,0,0,25);Position=UDim2.new(0,0,0,25);BackgroundColor3 = Color3.fromRGB(255, 149, 0);TextColor3=Color3.fromRGB(167, 95, 0);TextScaled=true;BorderSizePixel=0})
 	ScreenRight:CreateElement("TextLabel",{Text="2. Connect Active Polysilicon that Attched at Reactor with Triggerwire and connect to Pink colored port";Size=UDim2.new(1,0,0,25);Position=UDim2.new(0,0,0,50);BackgroundColor3 = Color3.fromRGB(255, 149, 0);TextColor3=Color3.fromRGB(167, 95, 0);TextScaled=true;BorderSizePixel=0})
@@ -117,35 +117,37 @@ local RG3Avgs = nil
 if reactors then
 	ScreenLeft:ClearElements()
 	ScreenRight:ClearElements()
-	uselesses = {ScreenLeft:CreateElement("TextLabel",{Text="Water";Position=UDim2.new(0,0,0,0);Size=UDim2.new(0,70,0,12);BackgroundTransparency=1;TextColor3=Color3.fromRGB(255,255,255)}),
-	ScreenLeft:CreateElement("TextLabel",{Text="Fuel";Position=UDim2.new(0,0,0,36);Size=UDim2.new(0,70,0,12);BackgroundTransparency=1;TextColor3=Color3.fromRGB(255,255,255)}),
-	ScreenLeft:CreateElement("TextLabel",{Text="Avg. Fuel 4";Position=UDim2.new(0,0,0,130);Size=UDim2.new(0,70,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(255,255,255)}),
-	ScreenLeft:CreateElement("TextLabel",{Text="Avg. Fuel 3";Position=UDim2.new(0,0,0,115);Size=UDim2.new(0,70,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(255,255,255)}),
-	ScreenLeft:CreateElement("TextLabel",{Text="Avg. Fuel 2";Position=UDim2.new(0,0,0,100);Size=UDim2.new(0,70,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(255,255,255)}),
-	ScreenLeft:CreateElement("TextLabel",{Text="Avg. Fuel 1";Position=UDim2.new(0,0,0,85);Size=UDim2.new(0,70,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(255,255,255)}),
-	ScreenLeft:CreateElement("TextLabel",{Text="Avg. Temp";Position=UDim2.new(0,0,0,70);Size=UDim2.new(0,70,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(255,255,255)})}
+	local bg = ScreenLeft:CreateElement("Frame",{Size= UDim2.fromScale(1,1);BackgroundColor3=Color3.fromRGB(255, 149, 0)})
+	task.wait()
+	uselesses = {ScreenLeft:CreateElement("TextLabel",{Text="Water";Position=UDim2.new(0,0,0,0);Size=UDim2.new(0,70,0,12);BackgroundTransparency=1;TextColor3=Color3.fromRGB(167, 95, 0)}),
+	ScreenLeft:CreateElement("TextLabel",{Text="Fuel";Position=UDim2.new(0,0,0,36);Size=UDim2.new(0,70,0,12);BackgroundTransparency=1;TextColor3=Color3.fromRGB(167, 95, 0)}),
+	ScreenLeft:CreateElement("TextLabel",{Text="Avg. Fuel 4";Position=UDim2.new(0,0,0,130);Size=UDim2.new(0,70,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(167, 95, 0)}),
+	ScreenLeft:CreateElement("TextLabel",{Text="Avg. Fuel 3";Position=UDim2.new(0,0,0,115);Size=UDim2.new(0,70,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(167, 95, 0)}),
+	ScreenLeft:CreateElement("TextLabel",{Text="Avg. Fuel 2";Position=UDim2.new(0,0,0,100);Size=UDim2.new(0,70,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(167, 95, 0)}),
+	ScreenLeft:CreateElement("TextLabel",{Text="Avg. Fuel 1";Position=UDim2.new(0,0,0,85);Size=UDim2.new(0,70,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(167, 95, 0)}),
+	ScreenLeft:CreateElement("TextLabel",{Text="Avg. Temp";Position=UDim2.new(0,0,0,70);Size=UDim2.new(0,70,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(167, 95, 0)})}
 	
 	RG1MainButton = ScreenLeft:CreateElement("TextButton",{Text="RG1";TextScaled=true;BackgroundColor3 = Color3.fromRGB(0,255,0);Size = UDim2.new(0,60,0,60);Position = UDim2.new(0,70,0,10)})
 	RG2MainButton = ScreenLeft:CreateElement("TextButton",{Text="RG2";TextScaled=true;BackgroundColor3 = Color3.fromRGB(0,255,0);Size = UDim2.new(0,60,0,60);Position = UDim2.new(0,140,0,10)})
 	RG3MainButton = ScreenLeft:CreateElement("TextButton",{Text="RG3";TextScaled=true;BackgroundColor3 = Color3.fromRGB(0,255,0);Size = UDim2.new(0,60,0,60);Position = UDim2.new(0,210,0,10)})
 	
-	RG1Avgs = {ScreenLeft:CreateElement("TextLabel",{Text="NaN";Position=UDim2.new(0,70,0,130);Size=UDim2.new(0,60,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(255,255,255)}),
-	ScreenLeft:CreateElement("TextLabel",{Text="NaN";Position=UDim2.new(0,70,0,115);Size=UDim2.new(0,60,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(255,255,255)}),
-	ScreenLeft:CreateElement("TextLabel",{Text="NaN";Position=UDim2.new(0,70,0,100);Size=UDim2.new(0,60,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(255,255,255)}),
-	ScreenLeft:CreateElement("TextLabel",{Text="NaN";Position=UDim2.new(0,70,0,85);Size=UDim2.new(0,60,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(255,255,255)}),
-	ScreenLeft:CreateElement("TextLabel",{Text="NaN";Position=UDim2.new(0,70,0,70);Size=UDim2.new(0,60,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(255,255,255)})}
+	RG1Avgs = {ScreenLeft:CreateElement("TextLabel",{Text="NaN";Position=UDim2.new(0,70,0,130);Size=UDim2.new(0,60,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(167, 95, 0)}),
+	ScreenLeft:CreateElement("TextLabel",{Text="NaN";Position=UDim2.new(0,70,0,115);Size=UDim2.new(0,60,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(167, 95, 0)}),
+	ScreenLeft:CreateElement("TextLabel",{Text="NaN";Position=UDim2.new(0,70,0,100);Size=UDim2.new(0,60,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(167, 95, 0)}),
+	ScreenLeft:CreateElement("TextLabel",{Text="NaN";Position=UDim2.new(0,70,0,85);Size=UDim2.new(0,60,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(167, 95, 0)}),
+	ScreenLeft:CreateElement("TextLabel",{Text="NaN";Position=UDim2.new(0,70,0,70);Size=UDim2.new(0,60,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(167, 95, 0)})}
 	
-	RG2Avgs = {ScreenLeft:CreateElement("TextLabel",{Text="NaN";Position=UDim2.new(0,140,0,130);Size=UDim2.new(0,60,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(255,255,255)}),
-	ScreenLeft:CreateElement("TextLabel",{Text="NaN";Position=UDim2.new(0,140,0,115);Size=UDim2.new(0,60,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(255,255,255)}),
-	ScreenLeft:CreateElement("TextLabel",{Text="NaN";Position=UDim2.new(0,140,0,100);Size=UDim2.new(0,60,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(255,255,255)}),
-	ScreenLeft:CreateElement("TextLabel",{Text="NaN";Position=UDim2.new(0,140,0,85);Size=UDim2.new(0,60,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(255,255,255)}),
-	ScreenLeft:CreateElement("TextLabel",{Text="NaN";Position=UDim2.new(0,140,0,70);Size=UDim2.new(0,60,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(255,255,255)})}
+	RG2Avgs = {ScreenLeft:CreateElement("TextLabel",{Text="NaN";Position=UDim2.new(0,140,0,130);Size=UDim2.new(0,60,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(167, 95, 0)}),
+	ScreenLeft:CreateElement("TextLabel",{Text="NaN";Position=UDim2.new(0,140,0,115);Size=UDim2.new(0,60,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(167, 95, 0)}),
+	ScreenLeft:CreateElement("TextLabel",{Text="NaN";Position=UDim2.new(0,140,0,100);Size=UDim2.new(0,60,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(167, 95, 0)}),
+	ScreenLeft:CreateElement("TextLabel",{Text="NaN";Position=UDim2.new(0,140,0,85);Size=UDim2.new(0,60,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(167, 95, 0)}),
+	ScreenLeft:CreateElement("TextLabel",{Text="NaN";Position=UDim2.new(0,140,0,70);Size=UDim2.new(0,60,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(167, 95, 0)})}
 	
-	RG3Avgs = {ScreenLeft:CreateElement("TextLabel",{Text="NaN";Position=UDim2.new(0,210,0,130);Size=UDim2.new(0,60,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(255,255,255)}),
-	ScreenLeft:CreateElement("TextLabel",{Text="NaN";Position=UDim2.new(0,210,0,115);Size=UDim2.new(0,60,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(255,255,255)}),
-	ScreenLeft:CreateElement("TextLabel",{Text="NaN";Position=UDim2.new(0,210,0,100);Size=UDim2.new(0,60,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(255,255,255)}),
-	ScreenLeft:CreateElement("TextLabel",{Text="NaN";Position=UDim2.new(0,210,0,85);Size=UDim2.new(0,60,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(255,255,255)}),
-	ScreenLeft:CreateElement("TextLabel",{Text="NaN";Position=UDim2.new(0,210,0,70);Size=UDim2.new(0,60,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(255,255,255)})}
+	RG3Avgs = {ScreenLeft:CreateElement("TextLabel",{Text="NaN";Position=UDim2.new(0,210,0,130);Size=UDim2.new(0,60,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(167, 95, 0)}),
+	ScreenLeft:CreateElement("TextLabel",{Text="NaN";Position=UDim2.new(0,210,0,115);Size=UDim2.new(0,60,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(167, 95, 0)}),
+	ScreenLeft:CreateElement("TextLabel",{Text="NaN";Position=UDim2.new(0,210,0,100);Size=UDim2.new(0,60,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(167, 95, 0)}),
+	ScreenLeft:CreateElement("TextLabel",{Text="NaN";Position=UDim2.new(0,210,0,85);Size=UDim2.new(0,60,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(167, 95, 0)}),
+	ScreenLeft:CreateElement("TextLabel",{Text="NaN";Position=UDim2.new(0,210,0,70);Size=UDim2.new(0,60,0,15);BackgroundTransparency=1;TextColor3=Color3.fromRGB(167, 95, 0)})}
 end
 
 if RG1 == false and reactors then
